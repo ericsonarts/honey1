@@ -14,7 +14,7 @@
       align-items: center;
       height: 100vh;
       font-family: 'Montserrat', sans-serif;
-      background-color: #FFFAF0;
+      background-color: #FFEB3B; /* yellow background */
       color: #333;
     }
     .container {
@@ -27,6 +27,20 @@
     p {
       font-size: 1.5rem;
       margin-top: 0;
+      margin-bottom: 1.5rem;
+    }
+    #start-btn {
+      font-size: 1rem;
+      padding: 0.75rem 1.5rem;
+      background-color: #FFA000;
+      color: #fff;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      transition: background-color 0.2s ease;
+    }
+    #start-btn:hover {
+      background-color: #FF8F00;
     }
   </style>
 </head>
@@ -34,6 +48,7 @@
   <div class="container">
     <h1>Honey Helper</h1>
     <p>Remembering the Little Things</p>
+    <button id="start-btn">Start</button>
   </div>
 </body>
 </html>
