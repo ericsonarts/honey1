@@ -19,6 +19,21 @@
     }
     .container {
       text-align: center;
+      position: relative;
+      padding: 2rem;
+    }
+    .bees {
+      display: flex;
+      justify-content: center;
+      margin-bottom: 1rem;
+    }
+    .bees svg {
+      width: 80px;
+      height: 80px;
+      margin: 0 10px;
+    }
+    .bees svg:last-child {
+      transform: scaleX(-1);
     }
     h1 {
       font-size: 3rem;
@@ -46,6 +61,26 @@
 </head>
 <body>
   <div class="container">
+    <div class="bees">
+      <!-- Bee Mascot 1 -->
+      <svg viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+        <ellipse cx="32" cy="32" rx="14" ry="12" fill="#FFEB3B" stroke="#333" stroke-width="2"/>
+        <line x1="32" y1="20" x2="32" y2="44" stroke="#333" stroke-width="4"/>
+        <line x1="26" y1="24" x2="38" y2="24" stroke="#333" stroke-width="4"/>
+        <circle cx="26" cy="28" r="3" fill="#333"/>
+        <circle cx="38" cy="28" r="3" fill="#333"/>
+        <path d="M22,38 C24,44 40,44 42,38" fill="none" stroke="#333" stroke-width="3" stroke-linecap="round"/>
+      </svg>
+      <!-- Bee Mascot 2 (mirrored) -->
+      <svg viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+        <ellipse cx="32" cy="32" rx="14" ry="12" fill="#FFEB3B" stroke="#333" stroke-width="2"/>
+        <line x1="32" y1="20" x2="32" y2="44" stroke="#333" stroke-width="4"/>
+        <line x1="26" y1="24" x2="38" y2="24" stroke="#333" stroke-width="4"/>
+        <circle cx="26" cy="28" r="3" fill="#333"/>
+        <circle cx="38" cy="28" r="3" fill="#333"/>
+        <path d="M22,38 C24,44 40,44 42,38" fill="none" stroke="#333" stroke-width="3" stroke-linecap="round"/>
+      </svg>
+    </div>
     <h1>Honey Helper</h1>
     <p>Remembering the Little Things</p>
     <button id="start-btn">Start</button>
