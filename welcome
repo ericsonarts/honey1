@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Honey Helper</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      padding: 50px;
+      background-color: #FFF7F0;
+      color: #333;
+    }
+    h1 {
+      color: #FF8C42;
+      font-size: 3em;
+    }
+    p {
+      font-size: 1.2em;
+      font-style: italic;
+    }
+  </style>
+</head>
+<body>
+  <h1>Honey Helper</h1>
+  <p>Remember the little things that matter most 💛</p>
+</body>
+</html>
