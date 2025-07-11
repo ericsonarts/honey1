@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Honey Helper – Questionnaire</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="container">
+    <h1>Let’s Get to Know Each Other</h1>
+    <form id="questionnaire-form">
+      <div class="question">
+        <label for="favorite-memory">What’s one of your favorite memories together?</label><br/>
+        <textarea id="favorite-memory" name="favorite-memory" rows="3" required></textarea>
+      </div>
+
+      <div class="question">
+        <label for="love-language">What’s your primary love language?</label><br/>
+        <select id="love-language" name="love-language" required>
+          <option value="">– Select –</option>
+          <option value="words">Words of Affirmation</option>
+          <option value="quality">Quality Time</option>
+          <option value="gifts">Receiving Gifts</option>
+          <option value="service">Acts of Service</option>
+          <option value="touch">Physical Touch</option>
+        </select>
+      </div>
+
+      <div class="question">
+        <label for="little-things">Name something small that makes you happy.</label><br/>
+        <input type="text" id="little-things" name="little-things" required/>
+      </div>
+
+      <button type="submit">Submit Answers</button>
+    </form>
+  </div>
+</body>
+</html>
