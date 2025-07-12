@@ -9,31 +9,71 @@
 <body>
   <div class="container">
     <h1>Let’s Get to Know Each Other</h1>
-    <form id="questionnaire-form">
+    <form id="question-form">
       <div class="question">
-        <label for="favorite-memory">What’s one of your favorite memories together?</label><br/>
-        <textarea id="favorite-memory" name="favorite-memory" rows="3" required></textarea>
+        <label id="question-label" for="question-input">What can we call you?</label><br/>
+        <input type="text" id="question-input" name="user-name" required />
       </div>
-
-      <div class="question">
-        <label for="love-language">What’s your primary love language?</label><br/>
-        <select id="love-language" name="love-language" required>
-          <option value="">– Select –</option>
-          <option value="words">Words of Affirmation</option>
-          <option value="quality">Quality Time</option>
-          <option value="gifts">Receiving Gifts</option>
-          <option value="service">Acts of Service</option>
-          <option value="touch">Physical Touch</option>
-        </select>
-      </div>
-
-      <div class="question">
-        <label for="little-things">Name something small that makes you happy.</label><br/>
-        <input type="text" id="little-things" name="little-things" required/>
-      </div>
-
-      <button type="submit">Submit Answers</button>
     </form>
   </div>
+
+  <script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const questions = [
+      {
+        label: "What can we call you?",
+        type: "text",
+        id: "user-name",
+        name: "user-name",
+        placeholder: "",
+        pattern: ".*",
+        errorMsg: "Please enter a name."
+      },
+      {
+        label: "When’s your birthday?",
+        type: "text",
+        id: "birthday",
+        name: "birthday",
+        placeholder: "mm/dd/yyyy",
+        pattern: "\\d{2}\\/\\d{2}\\/\\d{4}",
+        errorMsg: "Please use mm/dd/yyyy format."
+      }
+    ];
+    let current = 0;
+    const form = document.getElementById('question-form');
+    const label = document.getElementById('question-label');
+    const input = document.getElementById('question-input');
+
+    function showQuestion(index) {
+      const q = questions[index];
+      label.textContent = q.label;
+      input.type = q.type;
+      input.id = q.id;
+      input.name = q.name;
+      input.placeholder = q.placeholder;
+      input.pattern = q.pattern;
+      input.value = '';
+      input.focus();
+    }
+
+    form.addEventListener('submit', e => {
+      e.preventDefault();
+      if (!input.checkValidity()) {
+        input.reportValidity();
+        return;
+      }
+      // TODO: store answers as needed e.g., in localStorage
+      current++;
+      if (current < questions.length) {
+        showQuestion(current);
+      } else {
+        // All questions answered – proceed to next step
+        window.location.href = 'questionnaire-complete.html';
+      }
+    });
+
+    showQuestion(current);
+  });
+  </script>
 </body>
 </html>
