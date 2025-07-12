@@ -8,7 +8,7 @@
 </head>
 <body>
   <div class="container">
-    <h1>Let’s Get to Know Each Other</h1>
+    <h1>Let’s get to know each other</h1>
     <form id="question-form">
       <div class="question">
         <label id="question-label" for="question-input">What can we call you?</label><br/>
@@ -62,12 +62,10 @@
         input.reportValidity();
         return;
       }
-      // TODO: store answers as needed e.g., in localStorage
       current++;
       if (current < questions.length) {
         showQuestion(current);
       } else {
-        // All questions answered – proceed to next step
         window.location.href = 'questionnaire-complete.html';
       }
     });
