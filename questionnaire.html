@@ -3,75 +3,28 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Honey Helper – Questionnaire</title>
+  <title>Honey Helper</title>
   <link rel="stylesheet" href="style.css" />
+  <script src="script.js" defer></script>
 </head>
 <body>
   <div class="container">
-    <h1>Let’s get to know each other</h1>
-    <form id="question-form">
-      <div class="question">
-        <label id="question-label" for="question-input">What can we call you?</label><br/>
-        <input type="text" id="question-input" name="user-name" required />
+    <!-- App logo -->
+    <img src="logo.png" alt="Honey Helper Logo" style="width:150px; margin-bottom:1rem;" />
+
+    <!-- Bee mascots -->
+    <div class="bees">
+      <div class="bee first">
+        <!-- Cartoony Bee SVG here -->
       </div>
-    </form>
+      <div class="bee second">
+        <!-- Mirrored Cartoony Bee SVG here -->
+      </div>
+    </div>
+
+    <h1>Honey Helper</h1>
+    <p>Remembering the Little Things</p>
+    <button id="start-btn">Let’s get started!</button>
   </div>
-
-  <script>
-  document.addEventListener('DOMContentLoaded', () => {
-    const questions = [
-      {
-        label: "What can we call you?",
-        type: "text",
-        id: "user-name",
-        name: "user-name",
-        placeholder: "",
-        pattern: ".*",
-        errorMsg: "Please enter a name."
-      },
-      {
-        label: "When’s your birthday?",
-        type: "text",
-        id: "birthday",
-        name: "birthday",
-        placeholder: "mm/dd/yyyy",
-        pattern: "\\d{2}\\/\\d{2}\\/\\d{4}",
-        errorMsg: "Please use mm/dd/yyyy format."
-      }
-    ];
-    let current = 0;
-    const form = document.getElementById('question-form');
-    const label = document.getElementById('question-label');
-    const input = document.getElementById('question-input');
-
-    function showQuestion(index) {
-      const q = questions[index];
-      label.textContent = q.label;
-      input.type = q.type;
-      input.id = q.id;
-      input.name = q.name;
-      input.placeholder = q.placeholder;
-      input.pattern = q.pattern;
-      input.value = '';
-      input.focus();
-    }
-
-    form.addEventListener('submit', e => {
-      e.preventDefault();
-      if (!input.checkValidity()) {
-        input.reportValidity();
-        return;
-      }
-      current++;
-      if (current < questions.length) {
-        showQuestion(current);
-      } else {
-        window.location.href = 'questionnaire-complete.html';
-      }
-    });
-
-    showQuestion(current);
-  });
-  </script>
 </body>
 </html>
